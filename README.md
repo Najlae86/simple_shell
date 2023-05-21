@@ -21,8 +21,8 @@ The shell is a program that takes commands from the keyboard via the terminal, a
 **To better understand how the shell actually works, you can read our [Article].**
 
 ## About this project
-This project is a simple version of the linux shell made for [Holberton School] taking part of the "Low-level programming & Algorithm - Linux and Unix system programming" projects.\
-It is created using the **C programming Language** and it can do many functionalities that a real shell does.
+This project is a simple version of the linux shell made for an alx project 
+that is created using the **C programming Language** and it can do many functionalities that a real shell does.
 
 ## Essential Functionalities of the Simple Shell:
 > Displays a prompt "#cisfun$ " and waits for user input.\
@@ -154,23 +154,14 @@ ubunto@ubuntu:~/Bureau/simple_shell$
 No known Bugs.
 
 ## TEAM
-Chokri Inès  : [LinkedIn/inès] | [GitHub/inès] | [Twitter/inès]\
-Matri Mariem : [LinkedIn/mariem] | [GitHub/mariem] | [Twitter/mariem]
+Taouil Omar  : [LinkedIn/omar] | [GitHub/omar] | [Twitter/omar]\
+Aissaoui Najlae  : [LinkedIn/mariem] | [GitHub/mariem] | [Twitter/mariem]
 
-[Article]: <https://www.linkedin.com/pulse/what-really-happens-when-you-type-ls-l-shell-mariem-matri/>
-[Holberton School]: <https://www.holbertonschool.com>
-[LinkedIn/inès]: <https://www.linkedin.com/in/in%C3%A8s-chokri-b247b7175>
-[LinkedIn/mariem]: <https://www.linkedin.com/in/mariem-matri-249620178>
-[GitHub/inès]: <https://github.com/CutiePizza>
-[GitHub/mariem]: <https://github.com/MatriMariem>
-[Twitter/inès]: <https://twitter.com/chokri_ines>
-[Twitter/mariem]: <https://twitter.com/MatriMariem>
 
-## AUTHOR DESCRIPTION (Mariem Matri)
- - I'm a Food Process Engineer and a software engineering student at Holberton School.
-  - I have been studying low-level programming, high-level
- programming, system engineering and devops, and web
- stack programming (Front-end & Back-end) using a
- methodology based on peer-learning and projects.
-  - I'm curious, adaptable, a fast learner and I love developing
- my skills.
+[LinkedIn/omar]: <https://www.linkedin.com/in/taouilomar/>
+[LinkedIn/najlae]: <https://www.linkedin.com/in/mariem-matri-249620178>
+[GitHub/omar]: <https://github.com/OmarTl2005>
+[GitHub/najlae]: <https://github.com/Najlae86>
+[Twitter/omar]: <https://twitter.com/its_omar_00>
+[Twitter/najlae]: <https://twitter.com/MatriMariem>
+
