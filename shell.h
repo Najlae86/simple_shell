@@ -105,8 +105,5 @@ list_path *node_starts_with(list_path *node, char *p, char c);
 #define BUF_FLUSH -1
 
 int is_delim(char c, char *delim);
-int _myexit(ino_t *info);
-int _mycd(ino_t *info);
-int _myhelp(ino_t *info);
 
 #endif
