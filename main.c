@@ -1,44 +1,47 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * main - entry point
- * @acgv: arg count
- * @avgv: arg vector
- * Return: 0 on success, 1 on error
+ * main - starting point of the program
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * @env: array of environment variables
+ * Return: 0 on success, 1 on failure
  */
-int main(int acgv, char **avgv)
+
+int main(int argc, char **argv, char **env)
 {
-	info_t info[] = { INFO_INIT };
-	int i = 2;
+	char *line = NULL, **tokens = NULL;
+	size_t len = 0;
+	ssize_t read = 0;
+	int status = 0;
 
-	asm ("mov %1, %0\n\t"
-			"add $3, %0"
-			: "=r" (i)
-			: "r" (i));
-
-	if (acgv == 2)
+	(void)argc;
+	sigintHandler(0);
+	while (1)
 	{
-		i = open(avgv[1], O_RDONLY);
-		if (i == -1)
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "$ ", 2);
+		read = getline(&line, &len, stdin);
+		if (read == -1)
 		{
-			if (errno == EACCES)
-				exit(126);
-			if (errno == ENOENT)
-			{
-				_eputs(avgv[0]);
-				_eputs(": 0: Can't open ");
-				_eputs(avgv[1]);
-				_eputchar('\n');
-				_eputchar(BUF_FLUSH);
-				exit(127);
-			}
-			return (EXIT_FAILURE);
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			break;
 		}
-		info->readi = i;
+		if (line[0] == '\n')
+			continue;
+		cut_string(line);
+		tokens = tokenize(line);
+		if (tokens == NULL)
+			continue;
+		if (tokens[0] == NULL)
+		{
+			free(tokens);
+			continue;
+		}
+		status = execute(tokens, argv, env, line);
+		free(tokens);
 	}
-	populate_env_list(info);
-	read_history(info);
-	hsh(info, avgv);
-	return (EXIT_SUCCESS);
+	free(line);
+	return (status);
 }
-
