@@ -24,12 +24,15 @@ char *_strcpy(char *dest, char *src);
 char *_getenv(char *name);
 char *make_path(char *path, char *cmd);
 char *get_path(char *cmd);
-int execute(char **tokens, char **argv, char **env);
+int execute(char **tokens, char **argv, char **env, char *line);
 void ffree(char **ptr);
 void p_free(char *ptr);
-int builtins(char **tokens, char **argv, char **env);
+int builtins(char **tokens, char **argv, char **env, char *line);
 int _atoi(char *str);
 void cut_string(char *str);
 char *_itoa(int num);
+void print_val(int val);
+int _isnumber(char *str);
+char *my_strtok(char *str, const char *delim);
 
 #endif /* _MAIN_H_ */

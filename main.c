@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **env)
 			free(tokens);
 			continue;
 		}
-		status = execute(tokens, argv, env);
+		status = execute(tokens, argv, env, line);
 		free(tokens);
 	}
 	free(line);
